@@ -1,0 +1,24 @@
+inherit kf5
+
+NAME="kf5-kcodecs"
+VERSION=5.9.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 text encoding library"
+DESCRIPTION="KCodecs provide a collection of methods to manipulate strings
+using various encodings."
+
+PKG_NAMES="libKF5Codecs5 libKF5Codecs-devel"
+libKF5Codecs5_CONTENTS="
+	usr/bin/cygKF5Codecs-5.dll
+	usr/share/doc/
+	usr/share/locale/
+"
+libKF5Codecs_devel_REQUIRES="libQt5Core-devel"
+libKF5Codecs_devel_CONTENTS="
+	usr/include/KF5/KCodecs/
+	usr/include/KF5/kcodecs_version.h
+	usr/lib/cmake/KF5Codecs/
+	${QT5_MKSPECSDIR#/}/modules/qt_KCodecs.pri
+	usr/lib/libKF5Codecs.dll.a
+"
