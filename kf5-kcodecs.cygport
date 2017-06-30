@@ -1,14 +1,14 @@
-inherit kf5
+inherit kf5 python2 python3
 
 NAME="kf5-kcodecs"
-VERSION=5.27.0
+VERSION=5.35.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="KDE 5 text encoding library"
 DESCRIPTION="KCodecs provide a collection of methods to manipulate strings
 using various encodings."
 
-PKG_NAMES="libKF5Codecs5 libKF5Codecs-devel"
+PKG_NAMES="libKF5Codecs5 libKF5Codecs-devel python2-pykf5-kcodecs python3-pykf5-kcodecs"
 libKF5Codecs5_CONTENTS="
 	usr/bin/cygKF5Codecs-5.dll
 	usr/share/doc/
@@ -21,4 +21,7 @@ libKF5Codecs_devel_CONTENTS="
 	usr/lib/cmake/KF5Codecs/
 	${QT5_MKSPECSDIR#/}/modules/qt_KCodecs.pri
 	usr/lib/libKF5Codecs.dll.a
+	usr/share/sip/PyKF5/KCodecs/
 "
+python2_pykf5_kcodecs_CONTENTS="${PYTHON2_SITELIB#/}/PyKF5/KCodecs.dll"
+python3_pykf5_kcodecs_CONTENTS="${PYTHON3_SITELIB#/}/PyKF5/KCodecs.dll"
